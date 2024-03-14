@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listpage</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body class="grey-bg">
+
+    <%- include('nav.ejs') %>
+    
+    <div class="white-bg">
+        <% for (var i = 0; i < list.length; i++){ %>
+        <a href="/detail/<%= list[i]._id %>">
+            <div class="list-box">
+                <h4><%= list[i].title %> </h4>
+                <p><%= list[i].content %></p>
+                <p>작성자  <%= list[i].username %> <% if(login_user.username == list[i].username){ %>
+                    (내가 쓴글)
+                <% }%></h4></p>
+            </div>
+        </a>
+        <% } %> 
+    </div>
+    <!-- 페이지 분류 -->
+    <div style="text-align: center;">
+        <% for(let i =0; i < page.length/5; i++) { %>
+            <a href="/list/<%= i+1 %>"><%= i+1 %></a>
+        <% } %>
+    </div>
+</body>
+</html>

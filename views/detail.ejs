@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body class="grey-bg">
+    <div class="detail-bg">
+        <p>작성자 : <%= result.username %></p>
+        <% if (login_user.username == result.username ){ %>
+            <a href="/edit/<%= result._id %>">✏️</a>
+            <a href="/delete/<%= result._id %>">🗑️</a>
+            <% }  %>
+        <h4><%= result.title %></h4>
+        <p><%= result.content %></p>
+    </div> 
+</body>
+</html>

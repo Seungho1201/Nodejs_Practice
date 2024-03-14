@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body class="grey-bg">
+
+    <%- include('nav.ejs') %>   <!-- html 파일 복사 (한번만 )-->
+
+    <form class="form-box" action="/edit" method="POST">
+        <h4>수정</h4>
+        <input name="id" value="<%= result._id %>" style = "display: none;">
+        <input name="title" value="<%= result.title %>">
+        <input name="content" value="<%= result.content %>">
+        <button type="submit">전송</button>
+    </form> 
+    
+</body>
+</html>
